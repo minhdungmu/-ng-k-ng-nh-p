@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Đăng ký & Đăng nhập</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: red;
+            padding: 40px;
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-top: 5px solid red;
+
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #34495e;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #2ecc71;
+            outline: none;
+            box-shadow: 0 0 5px rgba(46, 204, 113, 0.3);
+        }
+
+        /* Style hiển thị lỗi */
+        .error input {
+            border-color: #e74c3c;
+            background-color: #fdf2f2;
+        }
+
+        .error-msg {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error .error-msg {
+            display: block;
+        }
+
+        .btn-action {
+            width: 100%;
+            padding: 12px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-action:hover {
+            background: #219150;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .toggle-link span {
+            color: #27ae60;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="register-area">
+            <h2>REGISTER</h2>
+            <form id="regForm">
+                <div class="form-group" id="group-user">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" id="reg-user" placeholder="Từ 6-18 ký tự">
+                    <p class="error-msg">Tên đăng nhập phải từ 6-18 ký tự</p>
+                </div>
+
+                <div class="form-group" id="group-email">
+                    <label>Email</label>
+                    <input type="text" id="reg-email" placeholder="example@football.com">
+                    <p class="error-msg">Email không đúng định dạng</p>
+                </div>
+
+                <div class="form-group" id="group-pass">
+                    <label>Mật khẩu</label>
+                    <input type="password" id="reg-pass" placeholder="Từ 8-20 ký tự">
+                    <p class="error-msg">Mật khẩu phải từ 8-20 ký tự</p>
+                </div>
+
+                <div class="form-group" id="group-verify">
+                    <label>Xác nhận mật khẩu</label>
+                    <input type="password" id="reg-verify" placeholder="Nhập lại mật khẩu">
+                    <p class="error-msg">Mật khẩu xác nhận không trùng khớp</p>
+                </div>
+
+                <button type="submit" class="btn-action">ĐĂNG KÝ NGAY</button>
+            </form>
+            <div class="toggle-link">Đã có tài khoản? <span onclick="toggleForm()">Đăng nhập</span></div>
+        </div>
+
+        <div id="login-area" class="hidden">
+            <h2> LOGIN</h2>
+            <form>
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn-action">VÀO SÂN</button>
+            </form>
+            <div class="toggle-link">Fan mới? <span onclick="toggleForm()">Tạo tài khoản</span></div>
+        </div>
+    </div>
+
+    <script>
+        const regForm = document.getElementById('regForm');
+
+        function toggleForm() {
+            document.getElementById('register-area').classList.toggle('hidden');
+            document.getElementById('login-area').classList.toggle('hidden');
+        }
+        regForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let isValid = true;
+
+            const user = document.getElementById('reg-user').value.trim();
+            const email = document.getElementById('reg-email').value.trim();
+            const pass = document.getElementById('reg-pass').value.trim();
+            const verify = document.getElementById('reg-verify').value.trim();
+
+            if (user.length < 6 || user.length > 18) {
+                document.getElementById('group-user').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('group-user').classList.remove('error');
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('group-email').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('group-email').classList.remove('error');
+            }
+            if (pass.length < 8 || pass.length > 20) {
+                document.getElementById('group-pass').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('group-pass').classList.remove('error');
+            }
+            if (verify !== pass || verify === "") {
+                document.getElementById('group-verify').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('group-verify').classList.remove('error');
+            }
+
+            if (isValid) {
+                alert("Chúc mừng! Bạn đã đăng ký thành công thành viên đội bóng.");
+            }
+        });
+    </script>
+</body>
+
+</html>
