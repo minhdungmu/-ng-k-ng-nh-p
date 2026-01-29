@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>24h Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial
+        }
+
+        body {
+            background: #f2f2f2
+        }
+
+        /* Top */
+        .top {
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #6cab00
+        }
+
+        .search input {
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+
+
+
+        .login-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border: 2px solid #6a0dad;
+            color: #6a0dad;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .login-btn:hover {
+            background: #6a0dad;
+            color: white;
+        }
+
+        .icon {
+            font-size: 16px;
+        }
+
+        nu */ .menu {
+            background: #76b300;
+            padding: 12px 40px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        /* Layout */
+        .container {
+            width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Main news */
+        .main {
+            background: #fff;
+            padding: 15px;
+        }
+
+        .main img {
+            width: 100%;
+            border-radius: 4px
+        }
+
+        .main h2 {
+            margin: 10px 0;
+            font-size: 22px
+        }
+
+        .main p {
+            color: #555
+        }
+
+        /* Sub news */
+        .sub {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .sub div {
+            background: #eee;
+            padding: 5px
+        }
+
+        .sub img {
+            width: 100%
+        }
+
+        /* Middle column */
+        .middle {
+            background: #fff;
+            padding: 15px;
+        }
+
+        .middle .item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .middle .cat {
+            color: #76b300;
+            font-size: 13px
+        }
+
+        /* Right banner */
+        .right {
+            background: #76b300;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        .banner {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        /* Responsive */
+        @media(max-width:1200px) {
+            .container {
+                width: 95%;
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top -->
+    <div class="top">
+        <img src="./logo.svg" alt="" style="width: 77px;height: auto;">
+
+        <div class="search">
+            <input placeholder="Nhập tin tức cần tìm🔍">
+        </div>
+        <div class="login">
+            <a href="login.html" class="login-btn">
+                <span class="icon">👤</span> Đăng nhập
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu">
+        <a href="#">TIN TỨC</a>
+        <a href="#">BÓNG ĐÁ</a>
+        <a href="#">KINH DOANH</a>
+        <a href="#">GIẢI TRÍ</a>
+        <a href="#">SỨC KHỎE</a>
+        <a href="#">THỂ THAO</a>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+
+        <!-- Left -->
+        <div class="main">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
+            <h2>Tổng Bí thư, Chủ tịch Trung Quốc Tập Cận Bình cử đặc phái viên đến Việt Nam</h2>
+            <p>Hôm nay (29/1), đặc phái viên cấp cao của Trung Quốc đến thăm Việt Nam...</p>
+
+            <div class="sub">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d">
+                    <p>U23 Việt Nam quyết thắng</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
+                    <p>Ronaldo lập siêu phẩm</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+                    <p>Xe mới ra mắt</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle -->
+        <div class="middle">
+            <div class="item">
+                <div class="cat">Tin tức trong ngày</div>
+                Gần 3 triệu tỷ đồng thực hiện các dự án giao thông
+            </div>
+            <div class="item">
+                <div class="cat">Tin tức trong ngày</div>
+                Hàng ngàn chim chiếm phố ở Cần Thơ
+            </div>
+            <div class="item">
+                <div class="cat">Kinh doanh</div>
+                Giá vàng vượt mốc 191 triệu đồng
+            </div>
+            <div class="item">
+                <div class="cat">Giải trí</div>
+                Chi Pu gây xôn xao khi ra mắt sản phẩm mới
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="right">
+            <h2>XEM VIDEO HIGHLIGHT</h2>
+            <div class="banner">
+                24H.COM.VN <br><br>
+                NHỮNG KHOẢNH KHẮC ĐÁNG XEM
+            </div>
+
+            <div id="animation_container"
+                style="background-color: rgba(255, 255, 255, 0); width: 300px; height: 600px; position: relative;">
+                <canvas id="canvas" width="300" height="600" position: absolute; display: block; background-color:
+                    rgba(255, 255, 255, 0); cursor: pointer; background-image: unset;>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

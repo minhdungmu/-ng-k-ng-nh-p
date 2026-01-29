@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>thời tiết</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            border-radius: 20px;
+        }
+
+        .temp {
+            font-size: 48px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card p-4 shadow" style="width: 350px;">
+        <h3 class="text-center mb-3">🌤 Weather App</h3>
+
+        <input id="cityInput" class="form-control mb-2" placeholder="Nhập tên thành phố">
+        <button class="btn btn-primary w-100 mb-2" onclick="getWeather()">Tìm kiếm</button>
+        <button class="btn btn-outline-secondary w-100" onclick="getLocation()">📍 Vị trí hiện tại</button>
+
+        <div id="result" class="text-center mt-4"></div>
+    </div>
+
+    <script>
+        const API_KEY = "YOUR_API_KEY_HERE";
+
+        function displayWeather(data) {
+            const html = `
+      <h4>${data.name}, ${data.sys.country}</h4>
+      <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+      <div class="temp">${Math.round(data.main.temp)}°C</div>
+      <p>${data.weather[0].description}</p>
+      <p>💧 Độ ẩm: ${data.main.humidity}%</p>
+    `;
+            document.getElementById("result").innerHTML = html;
+        }
+
+        function getWeather() {
+            const city = document.getElementById("cityInput").value;
+            if (!city) return alert("Nhập tên thành phố!");
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=vi`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.cod !== 200) return alert("Không tìm thấy thành phố");
+                    displayWeather(data);
+                });
+        }
+
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(pos => {
+                const { latitude, longitude } = pos.coords;
+
+                fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric&lang=vi`)
+                    .then(res => res.json())
+                    .then(data => displayWeather(data));
+            });
+        }
+    </script>
+
+</body>
+
+</html>
