@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>24h Clone</title>
+    <title>Trang web tin tức 24h </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,11 +15,10 @@
             font-family: Arial
         }
 
-        /* body {
+        body {
             background: #f2f2f2
-        } */
+        }
 
-        /* Top */
         .top {
             background: #fff;
             display: flex;
@@ -186,6 +185,46 @@
             padding-right: 0;
         }
 
+        .top-menu {
+            display: flex;
+            align-items: center;
+            background: #1a1a1a;
+            padding: 14px 20px;
+            color: #00e5ff;
+            font-family: Arial, sans-serif;
+        }
+
+        .menu-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00e5ff;
+            border-bottom: 2px solid #00e5ff;
+            padding-bottom: 4px;
+        }
+
+        .top-menu a {
+            color: #9ff6ff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .top-menu a:hover {
+            color: #00e5ff;
+            text-decoration: underline;
+        }
+
         .box-title {
             font-size: 22px;
             color: #6cab00;
@@ -241,187 +280,32 @@
             padding-left: 15px;
         }
 
-        .list-news li {
-            margin-bottom: 8px;
-            font-size: 14px;
+        .news-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 16px 0;
+            background-color: #0f0f0f;
+            border-top: 1px solid #2a2a2a;
         }
-    </style>
-</head>
 
-<body>
+        .news-item {
+            color: #00e5ff;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+        }
 
-    <!-- Top -->
-    <div class="top">
-        <img src="./logo.svg" alt="" style="width: 77px;height: auto;">
+        .news-item:hover {
+            text-decoration: underline;
+        }
 
-        <div class="search">
-            <input placeholder="Nhập tin tức cần tìm🔍">
-        </div>
-        <div class="login">
-            <a href="login.html" class="login-btn">
-                <span class="icon">👤</span> Đăng nhập
-            </a>
-
-        </div>
-    </div>
-
-    <!-- Menu -->
-    <div class="menu">
-        <a href="#">TIN TỨC</a>
-        <a href="#">BÓNG ĐÁ</a>
-        <a href="#">KINH DOANH</a>
-        <a href="#">GIẢI TRÍ</a>
-        <a href="#">SỨC KHỎE</a>
-        <a href="#">THỂ THAO</a>
-    </div>
-
-    <!-- Content -->
-    <div class="container">
-
-        <!-- Left -->
-        <div class="main">
-            <img
-                src="https://icdn.24h.com.vn/upload/1-2026/images/2026-01-29//1769687707-screen-shot-2026-01-29-at-34802-pm-width840height562.png">
-            <h2>Tổng Bí thư, Chủ tịch Trung Quốc Tập Cận Bình cử đặc phái viên đến Việt Nam</h2>
-            <p>Hôm nay (29/1), ông Lưu Hải Tinh - Đặc phái viên của Tổng Bí thư, Chủ tịch nước Trung Quốc Tập Cận Bình,
-                sẽ đến Việt Nam
-                để chuyển lời chúc mừng tốt đẹp của Ban Chấp hành Trung ương Đảng Cộng sản Trung Quốc và cá nhân Tổng Bí
-                thư, Chủ tịch
-                nước Tập Cận Bình tới Tổng Bí thư Tô Lâm.
-            </p>
-            <div class="sub">
-                <div>
-                    <img
-                        src="https://icdn.24h.com.vn/upload/1-2026/images/2026-01-13/23-pc-1768296743-996-width1920height1280.jpg">
-                    <p>U23 Việt Nam quyết thắng U23 Trung Quốc</p>
-
-                </div>
-                <div>
-                    <img
-                        src="https://icdn.24h.com.vn/upload/4-2025/images/2025-11-24/gettyimages-2247567358-612x612-495-1763928725-411-width740height495.jpg">
-                    <p>Ronaldo tung người móc bóng ghi siêu phẩm cho bàn thứ 954
-                    </p>
-                </div>
-                <div>
-                    <img
-                        src="https://icdn.24h.com.vn/upload/1-2026/images/2026-01-31/Gia-xe-Toyota-Raize-cap-nhat-moi-nhat-thang-2-2026-17-1769878004-751-width740height499.jpg">
-                    <p>Giá xe Toyota Raize cập nhật mới nhất tháng 2/2026</p>
-                </div>
-            </div>
-
-
-
-
-        </div>
-        <!-- Middle -->
-        <div class="middle">
-            <div class="item">
-                <div class="cat">Tin tức trong ngày</div>
-                Gần 3 triệu tỷ đồng thực hiện các dự án giao thông
-            </div>
-            <div class="item">
-                <div class="cat">Tin tức trong ngày</div>
-                Hàng ngàn chim chiếm phố ở Cần Thơ
-            </div>
-            <div class="item">
-                <div class="cat">Kinh doanh</div>
-                Giá vàng vượt mốc 191 triệu đồng
-            </div>
-            <div class="item">
-                <div class="cat">Giải trí</div>
-                Chi Pu gây xôn xao khi ra mắt sản phẩm mới
-            </div>
-        </div>
-        <!-- Right -->
-        <div class="right">
-            <h2>XEM VIDEO HIGHLIGHT</h2>
-            <div class="banner">
-                24H.COM.VN <br><br>
-                NHỮNG KHOẢNH KHẮC ĐÁNG XEM
-            </div>
-            <video src="https://video.24h.com.vn/upload/1-2025/videoclip/2025-03-31/1743387936-banner.mp4"
-                class="video-phai" controls autoplay></video>
-        </div>
-    </div>
-    <div class="news-2col">
-
-        <!-- CỘT TRÁI -->
-        <div class="news-box">
-            <h2 class="box-title active">TIN TỨC TRONG NGÀY</h2>
-
-            <div class="big-news">
-                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
-                <div>
-                    <h3>Truy tố cựu Thứ trưởng Hoàng Văn Thắng vì nhận hối lộ</h3>
-                    <p>Viện kiểm sát cáo buộc ông Hoàng Văn Thắng nhận hối lộ 200.000 USD...</p>
-                </div>
-            </div>
-
-            <div class="grid-news">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1521334884684-d80222895322">
-                    <p>3 đám cưới của giới "tài phiệt"</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471">
-                    <p>Chuyển giao trụ sở Bộ Công an</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
-                    <p>Không khí lạnh bao phủ miền Bắc</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
-                    <p>Ùn tắc giao thông giờ cao điểm</p>
-                </div>
-            </div>
-
-            <ul class="list-news">
-                <li>Môi giới hối lộ, trùm giang hồ Mạnh "gỗ" nhận 3.092 tỷ đồng</li>
-                <li>Tổng thống Ukraine hé lộ người duy nhất khiến ông Putin e ngại</li>
-            </ul>
-        </div>
-
-        <!-- CỘT PHẢI -->
-        <div class="news-box">
-            <h2 class="box-title green">BÓNG ĐÁ</h2>
-
-            <div class="big-news">
-                <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6">
-                <div>
-                    <h3>Video bóng đá Iraq - Iran: Bản lĩnh "Nhà vua"</h3>
-                    <p>Iraq chơi đầy nỗ lực trước Iran trong hiệp 2...</p>
-                </div>
-            </div>
-
-            <div class="grid-news">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d">
-                    <p>Luke Shaw sáng cửa dự World Cup</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-                    <p>AI Hilal đáp trả Ronaldo</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
-                    <p>Dàn sao Real Madrid nổi loạn</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1505842465776-3d90f616310d">
-                    <p>HLV Slot gây tranh cãi</p>
-                </div>
-            </div>
-
-            <ul class="list-news">
-                <li>HLV Slot nói "đá đẹp quan trọng hơn danh hiệu"</li>
-                <li>6 bê bối Olympic mùa đông khiến SEA Games cũng phải chào thua</li>
-            </ul>
-        </div>
-
-    </div>
-
-
-</body>
-
-</html>
+        <style>< !-- Top --><div class="top"><img src="./logo.svg" alt="" style="width: 77px;height: auto;"><div class="search"><input placeholder="Nhập tin tức cần tìm🔍"></div><div class="login"><a href="login.html" class="login-btn"><span class="icon">👤</span>Đăng nhập </a></div></div>< !-- Menu --><div class="menu"><a href="#">TIN TỨC</a><a href="#">BÓNG ĐÁ</a><a href="#">KINH DOANH</a><a href="#">GIẢI TRÍ</a><a href="#">SỨC KHỎE</a><a href="#">THỂ THAO</a></div>< !-- Content --><div class="container">< !-- Left --><div class="main"><img src="https://icdn.24h.com.vn/upload/1-2026/images/2026-01-29//1769687707-screen-shot-2026-01-29-at-34802-pm-width840height562.png"><h2>Tổng Bí thư,
+        Chủ tịch Trung Quốc Tập Cận Bình cử đặc phái viên đến Việt Nam</h2><p>Hôm nay (29/1),
+        ông Lưu Hải Tinh - Đặc phái viên của Tổng Bí thư,
+        Chủ tịch nước Trung Quốc Tập Cận Bình,
+        sẽ đến Việt Nam để chuyển lời chúc mừng tốt đẹp của Ban Chấp hành Trung ương Đảng Cộng sản Trung Quốc và cá nhân Tổng Bí thư,
+        Chủ tịch nước Tập Cận Bình tới Tổng Bí thư Tô Lâm. </p><div class="sub"><div><img src="https://icdn.24h.com.vn/upload/1-2026/images/2026-01-13/23-pc-1768296743-996-width1920height1280.jpg"><p>U23 Việt Nam quyết thắng U23 Trung Quốc</p></div><div><img src="https://icdn.24h.com.vn/upload/4-2025/images/2025-11-24/gettyimages-2247567358-612x612-495-1763928725-411-width740height495.jpg"><p>Ronaldo tung người móc bóng ghi siêu phẩm cho bàn thứ 954 </p></div><div><img src="https://icdn.24h.com.vn/upload/1-2026/images/2026-01-31/Gia-xe-Toyota-Raize-cap-nhat-moi-nhat-thang-2-2026-17-1769878004-751-width740height499.jpg"><p>Giá xe Toyota Raize cập nhật mới nhất tháng 2/2026</p></div></div></div>< !-- Middle --><div class="middle"><div class="item"><div class="cat">Tin tức trong ngày</div>Gần 3 triệu tỷ đồng thực hiện các dự án giao thông </div><div class="item"><div class="cat">Tin tức trong ngày</div>Hàng ngàn chim chiếm phố ở Cần Thơ </div><div class="item"><div class="cat">Kinh doanh</div>Giá vàng vượt mốc 191 triệu đồng </div><div class="item"><div class="cat">Giải trí</div>Chi Pu gây xôn xao khi ra mắt sản phẩm mới </div></div>< !-- Right --><div class="right"><h2>XEM VIDEO HIGHLIGHT</h2><div class="banner">24H.COM.VN <br><br>NHỮNG KHOẢNH KHẮC ĐÁNG XEM </div><video src="https://video.24h.com.vn/upload/1-2025/videoclip/2025-03-31/1743387936-banner.mp4"
+        class="video-phai" controls autoplay></video></div></div><div class="news-2col">< !-- CỘT TRÁI --><div class="news-box"><div class="top-menu"><div class="menu-left"><span class="menu-title">TIN TỨC TRONG NGÀY</span><a href="#">An ninh - Xã hội</a><a href="#">Nhịp sống 24H</a></div></div><div><div class="big-news"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"><div><h3>Truy tố cựu Thứ trưởng Hoàng Văn Thắng vì nhận hối lộ</h3><p>Viện kiểm sát cáo buộc ông Hoàng Văn Thắng nhận hối lộ 200.000 USD...</p></div></div><div class="grid-news"><div><img src="https://images.unsplash.com/photo-1521334884684-d80222895322"><p>3 đám cưới của giới "tài phiệt" </p></div><div><img src="https://images.unsplash.com/photo-1501183638710-841dd1904471"><p>Chuyển giao trụ sở Bộ Công an</p></div><div><img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231"><p>Không khí lạnh bao phủ miền Bắc</p></div><div><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b"><p>Ùn tắc giao thông giờ cao điểm</p></div></div><div class="news-wrapper"><div class="news-item">Thủ tướng: Phát triển phân khúc nhà ở cho người thu nhập từ 20 triệu đồng/tháng </div><div class="news-item">Làn sóng 'chuyển khẩu' của giới siêu giàu </div></div></div></div><div class="news-box"><div class="menu-right"><span class="menu-title">BÓNG ĐÁ</span><a href="#">Thể thao</a><a href="#">Video</a><a href="#">Ngoại hạng Anh</a><a href="#">Lịch thi đấu</a></div><div class="big-news"><img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6"><div><h3>Video bóng đá Iraq - Iran: Bản lĩnh "Nhà vua" </h3><p>Iraq chơi đầy nỗ lực trước Iran trong hiệp 2...</p></div></div><div class="grid-news"><div><img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d"><p>Luke Shaw sáng cửa dự World Cup</p></div><div><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a"><p>AI Hilal đáp trả Ronaldo</p></div><div><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b"><p>Dàn sao Real Madrid nổi loạn</p></div><div><img src="https://images.unsplash.com/photo-1505842465776-3d90f616310d"><p>HLV Slot gây tranh cãi</p></div></div><div class="news-wrapper"><div class="news-item">HLV Slot nói "đá đẹp quan trọng hơn danh hiệu"
+        </div><div class="news-item">6 bê bối Olympic mùa đông khiến SEA Games cũng phải chào thua </div></div></div></div>< !-- CỘT PHẢI --><div class="news-2col">< !-- CỘT TRÁI --><div class="news-box"><div class="top-menu"><div class="menu-left"><span class="menu-title">TIN TỨC TRONG NGÀY</span><a href="#">An ninh - Xã hội</a><a href="#">Nhịp sống 24H</a></div></div><div><div class="big-news"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"><div><h3>Truy tố cựu Thứ trưởng Hoàng Văn Thắng vì nhận hối lộ</h3><p>Viện kiểm sát cáo buộc ông Hoàng Văn Thắng nhận hối lộ 200.000 USD...</p></div></div><div class="grid-news"><div><img src="https://images.unsplash.com/photo-1521334884684-d80222895322"><p>3 đám cưới của giới "tài phiệt" </p></div><div><img src="https://images.unsplash.com/photo-1501183638710-841dd1904471"><p>Chuyển giao trụ sở Bộ Công an</p></div><div><img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231"><p>Không khí lạnh bao phủ miền Bắc</p></div><div><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b"><p>Ùn tắc giao thông giờ cao điểm</p></div></div><div class="news-wrapper"><div class="news-item">Thủ tướng: Phát triển phân khúc nhà ở cho người thu nhập từ 20 triệu đồng/tháng </div><div class="news-item">Làn sóng 'chuyển khẩu' của giới siêu giàu </div></div></div></div><div class="news-box"><div class="menu-right"><span class="menu-title">BÓNG ĐÁ</span><a href="#">Thể thao</a><a href="#">Video</a><a href="#">Ngoại hạng Anh</a><a href="#">Lịch thi đấu</a></div><div class="big-news"><img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6"><div><h3>Video bóng đá Iraq - Iran: Bản lĩnh "Nhà vua" </h3><p>Iraq chơi đầy nỗ lực trước Iran trong hiệp 2...</p></div></div><div class="grid-news"><div><img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d"><p>Luke Shaw sáng cửa dự World Cup</p></div><div><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a"><p>AI Hilal đáp trả Ronaldo</p></div><div><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b"><p>Dàn sao Real Madrid nổi loạn</p></div><div><img src="https://images.unsplash.com/photo-1505842465776-3d90f616310d"><p>HLV Slot gây tranh cãi</p></div></div><div class="news-wrapper"><div class="news-item">HLV Slot nói "đá đẹp quan trọng hơn danh hiệu"
+        </div><div class="news-item">6 bê bối Olympic mùa đông khiến SEA Games cũng phải chào thua </div></div></div></div>< !-- CỘT PHẢI --><div class="container">< !-- CỘT TRÁI --><div class="column"><h2 class="title">THẾ GIỚI</h2><div class="menu"><a href="#">Điểm nóng</a><a href="#">Dòng lịch sử</a><a href="#">Quân sự</a><a href="#">Dài kỳ</a></div><div class="news-main"><img src="https://via.placeholder.com/300x180" alt=""><h3>El Mencho: Từ cảnh sát thành trùm ma túy khét tiếng</h3><p>El Mencho từng khoác áo cảnh sát...</p></div><div class="news-list"><div class="news-item">Báo Mỹ tiết lộ nội dung điện đàm...</div><div class="divider"></div><div class="news-item">Cuba công bố phát hiện mới...</div><div class="divider"></div><div class="news-item">Tổng thống Zelensky hé lộ...</div></div></div>< !-- DIVIDER GIỮA --><div class="divider-vertical"></div>< !-- CỘT PHẢI --><div class="column"><h2 class="title">SỨC KHỎE ĐỜI SỐNG</h2><div class="menu"><a href="#">Bệnh tim</a><a href="#">Đột quỵ</a><a href="#">Ung thư</a></div><div class="news-main"><img src="https://via.placeholder.com/300x180" alt=""><h3>Bia không cồn thực chất là gì?</h3><p>Chọn bia không cồn trong cuộc vui...</p></div><div class="news-list"><div class="news-item">Kinh giới: Loại rau gia vị quen thuộc...</div><div class="divider"></div><div class="news-item">4 sự thật về ung thư tinh hoàn...</div><div class="divider"></div><div class="news-item">Loại quả giúp cơ thể hồi sức...</div></div></div></div></body></html>
